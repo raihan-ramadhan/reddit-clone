@@ -60,7 +60,7 @@ const Page = () => {
 
   return (
     <div className="container flex items-center h-full max-w-3xl mx-auto">
-      <div className="relative bg-white w-full h-fit p-4 rounded-lg space-y-6">
+      <div className="relative bg-white w-full h-fit p-4 rounded-lg space-y-6 overflow-hidden">
         <div className="flex justify-between items-center">
           <h1 className="text-xl font-semibold">Create a Community</h1>
         </div>
@@ -84,11 +84,12 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex justify-end gap-4">
+        <div className="flex justify-end gap-4 w-full overflow-hidden">
           <Button
             disabled={isLoading}
             variant="subtle"
             onClick={() => router.back()}
+            className="truncate"
           >
             Cancel
           </Button>
@@ -96,6 +97,7 @@ const Page = () => {
             isLoading={isLoading}
             disabled={input.length === 0}
             onClick={() => createCommunity()}
+            className="truncate"
           >
             Create Community
           </Button>
